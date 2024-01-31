@@ -9,9 +9,9 @@ const Main = ({ listToRender, text }: IMain) => {
     <main className="main">
       <ul className="main__list">
         {listToRender.length !== 0
-          ? listToRender.map((c) => {
+          ? listToRender.map((c, i) => {
               return (
-                <li key={c.id!} className="main__item">
+                <li key={i} className="main__item">
                   <CatCard {...c} />
                 </li>
               );

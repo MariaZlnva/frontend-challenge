@@ -25,15 +25,14 @@ const Cats = () => {
     };
   }, []);
 
-  const scrollHandler = (evt) => {
-    const scrollHeight = evt.target.documentElement.scrollHeight;
-    const scrollTop = evt.target.documentElement.scrollTop;
+  const scrollHandler = (): void => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
     const innerHeight = window.innerHeight;
     if (scrollHeight - (innerHeight + scrollTop) < 500) {
       dispatch(setFetching());
     }
   };
-
   const findLiked = allCats.map((c) => {
     if (savedCatsLS && savedCatsLS.length !== 0) {
       const found = savedCatsLS.find((s) => s.id === c.id);
